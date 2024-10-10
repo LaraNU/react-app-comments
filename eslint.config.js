@@ -8,6 +8,8 @@ const browserGlobals = {
   window: 'readonly',
   document: 'readonly',
   navigator: 'readonly',
+  HTMLFormElement: 'readonly',
+  console: 'readonly',
 };
 
 export default [
@@ -23,7 +25,9 @@ export default [
           jsx: true,
         },
       },
-      globals: browserGlobals,
+      globals: {
+        ...browserGlobals,
+      },
     },
     plugins: {
       '@typescript-eslint': tsPlugin,
@@ -35,6 +39,11 @@ export default [
       'react/jsx-uses-react': 'off',
       'react/react-in-jsx-scope': 'off',
       '@typescript-eslint/no-explicit-any': 'error',
+    },
+    settings: {
+      react: {
+        version: 'detect',
+      },
     },
   },
 ];
