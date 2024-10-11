@@ -1,4 +1,4 @@
-body {
+.new {
   background-color: #252525;
   background-image: url('/Gradient.png'), url('/bgTextura.png');
   background-size: contain, cover;
@@ -34,7 +34,7 @@ body {
   margin-bottom: 24px;
 }
 
-input {
+.input {
   padding: var(--pad);
   border-radius: 8px;
   background-color: transparent;
@@ -47,7 +47,7 @@ input {
   font-weight: bold;
 }
 
-label {
+.label {
   position: absolute;
   left: var(--pad);
   top: var(--pad);
@@ -62,19 +62,19 @@ label {
   font-size: 1.125rem;
 }
 
-input::placeholder {
+.input::placeholder {
   opacity: 0;
 }
 
-input:focus + label,
-input:not(:placeholder-shown) + label {
+.input:focus + .label,
+.input:not(:placeholder-shown) + .label {
   transform: translateY(calc(-50% - var(--pad))) scale(0.8);
   color: #ffffff;
   background-color: #252525;
   background-image: url('/bgTextura.png');
 }
 
-input:focus {
+.input:focus {
   border: 1px solid #ffffff;
 }
 
