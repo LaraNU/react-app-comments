@@ -1,0 +1,108 @@
+body {
+  background-color: #252525;
+  background-image: url('/Gradient.png'), url('/bgTextura.png');
+  background-size: contain, cover;
+  background-position:
+    top left,
+    center;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.container {
+  max-width: 550px;
+  margin-top: 190px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-family: Helvetica;
+  font-weight: 700;
+  text-align: center;
+}
+
+.text {
+  font-size: 1.25rem;
+  font-family: Helvetica;
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.formGroup {
+  --pad: 1.125rem;
+  position: relative;
+  font-family: Helvetica;
+  margin-bottom: 24px;
+}
+
+input {
+  padding: var(--pad);
+  border-radius: 8px;
+  background-color: transparent;
+  border: 1px solid #4d4d4d;
+  color: inherit;
+  width: 100%;
+  outline: none;
+
+  font-size: 1.375rem;
+  font-weight: bold;
+}
+
+label {
+  position: absolute;
+  left: var(--pad);
+  top: var(--pad);
+  background: transparent;
+  color: #ffffffb9;
+  padding-inline: 0.3em;
+  transition: transform 200ms;
+  pointer-events: none;
+  transform-origin: left;
+  translate: -0.3em;
+
+  font-size: 1.125rem;
+}
+
+input::placeholder {
+  opacity: 0;
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label {
+  transform: translateY(calc(-50% - var(--pad))) scale(0.8);
+  color: #ffffff;
+  background-color: #252525;
+  background-image: url('/bgTextura.png');
+}
+
+input:focus {
+  border: 1px solid #ffffff;
+}
+
+.formBtn {
+  color: #ffffff;
+  display: block;
+  width: 100%;
+  height: 60px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(
+    125deg,
+    rgba(246, 184, 253, 1) 0%,
+    rgba(49, 106, 215, 1) 100%
+  );
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 56px;
+}
+
+.textLink {
+  width: 100%;
+  margin: 190px 0 40px 0;
+}
+
+.eyeIcon {
+  position: absolute;
+  right: var(--pad);
+  top: 22px;
+  cursor: pointer;
+}
