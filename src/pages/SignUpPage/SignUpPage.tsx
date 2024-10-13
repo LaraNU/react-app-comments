@@ -49,6 +49,7 @@ const SignUpPage = () => {
       }
     }
   };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (passwordState === passwordConfirmState) {
