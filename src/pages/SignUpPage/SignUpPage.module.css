@@ -106,3 +106,9 @@
   top: 22px;
   cursor: pointer;
 }
+
+.errorMessage {
+  position: absolute;
+  color: #dd1515;
+  font-size: 14px;
+}
