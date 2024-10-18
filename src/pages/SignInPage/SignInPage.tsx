@@ -1,11 +1,11 @@
-import styles from './SignUpPage.module.css';
+import styles from './SignInPage.module.css';
 import React, { useState } from 'react';
-import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebase';
 import { FirebaseError } from 'firebase/app';
 import { useNavigate, Link } from 'react-router-dom';
 
-const SignUpPage = () => {
+const SignInPage = () => {
   const [passwordType, setPasswordType] = useState('password');
   const [eyeIcon, setEyeIcon] = useState('/close-eye.svg');
 
@@ -13,34 +13,22 @@ const SignUpPage = () => {
   const [eyeIconConfirm, setEyeIconConfirm] = useState('/close-eye.svg');
 
   const [errorFirebase, setError] = useState('');
-  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [passwordState, setPassword] = useState('');
   const [passwordConfirmState, setConfirmPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleSignUp = async (
-    email: string,
-    password: string,
-    name: string
-  ) => {
+  const handleSignIn = async (email: string, password: string) => {
     try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      const user = userCredential.user;
-
-      await updateProfile(user, {
-        displayName: name,
-      });
+      await signInWithEmailAndPassword(auth, email, password);
 
       navigate('/');
     } catch (error) {
       if (error instanceof FirebaseError) {
-        if (error.code === 'auth/email-already-in-use') {
-          setError('This email is already in use. Please try another one.');
+        if (error.code === 'auth/invalid-credential') {
+          setError(
+            'Invalid credentials provided. Please check your input and try again.'
+          );
         } else {
           setError(error.message);
         }
@@ -53,7 +41,7 @@ const SignUpPage = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (passwordState === passwordConfirmState) {
-      handleSignUp(email, passwordState, name);
+      handleSignIn(email, passwordState);
     }
   };
 
@@ -71,27 +59,13 @@ const SignUpPage = () => {
     <div className={styles.new}>
       <div className="wrapper">
         <div className={styles.container}>
-          <h2 className={styles.title}>Sign Up</h2>
+          <h2 className={styles.title}>Sign In</h2>
           <p className={styles.text}>
             Ready to become part of the exclusive club? Fill in the details
             below, and let the journey begin!
           </p>
-          <form onSubmit={handleSubmit}>
-            <div className={styles.formGroup}>
-              <input
-                onChange={(e) => setName(e.target.value)}
-                className={styles.input}
-                type="text"
-                id="name"
-                placeholder="Name"
-                autoComplete="off"
-                required
-              />
-              <label className={styles.label} htmlFor="name">
-                Full Name
-              </label>
-            </div>
 
+          <form onSubmit={handleSubmit}>
             <div className={styles.formGroup}>
               <input
                 onChange={(e) => setEmail(e.target.value)}
@@ -164,16 +138,16 @@ const SignUpPage = () => {
 
             <div className={styles.errorMessage}>{errorFirebase}</div>
             <button className={styles.formBtn} type="submit">
-              Sign Up
+              Sign In
             </button>
           </form>
         </div>
         <p className={styles.textLink}>
-          Already have an account? <Link to="/signin">Login</Link>
+          Don’t have account? <Link to="/signup">Sign Up</Link>
         </p>
       </div>
     </div>
   );
 };
 
-export default SignUpPage;
+export default SignInPage;

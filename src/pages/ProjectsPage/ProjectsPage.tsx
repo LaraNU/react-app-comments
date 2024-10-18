@@ -1,7 +1,7 @@
 import styles from './ProjectsPage.module.css';
 import background from '/image.jpg';
 import Header from '../../components/Header/Header';
-import Comments from '../../components/Comments/Comments';
+import CommentForm from '../../components/Comments/CommentForm';
 
 const ProjectsPage = () => {
   return (
@@ -38,7 +38,7 @@ const ProjectsPage = () => {
             elit.
           </p>
         </section>
-        <Comments />
+        <CommentForm />
       </main>
     </div>
   );

@@ -27,6 +27,7 @@ export default [
       },
       globals: {
         ...browserGlobals,
+        alert: 'readonly',
       },
     },
     plugins: {

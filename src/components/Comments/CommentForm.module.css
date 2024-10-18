@@ -5,7 +5,8 @@
 
 .container {
   max-width: 702px;
-
+  width: 100%;
+  gap: 37px;
   padding: 30px 20px;
   display: flex;
   align-items: center;
@@ -13,8 +14,8 @@
 }
 
 .commentForm {
-  width: 662px;
-  max-width: 100%;
+  max-width: 662px;
+  width: 100%;
   position: relative;
 }
 
@@ -69,4 +70,42 @@
     rgba(246, 184, 253, 1) 0%,
     rgba(49, 106, 215, 1) 100%
   );
+}
+
+.commentsList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 37px;
+}
+
+.containerComment {
+  display: flex;
+  flex-direction: column;
+  gap: 37px;
+  width: 100%;
+}
+
+.containerComment:nth-child(2) {
+  width: 88%;
+}
+
+.containerComment:nth-child(n + 3) {
+  width: 77%;
+}
+
+.repliesList {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 37px;
+}
+
+.repliesList li:first-child {
+  width: 88%;
+}
+
+.repliesList li:nth-child(n + 2) {
+  width: 77%;
 }
