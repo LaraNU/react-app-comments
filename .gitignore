@@ -1,0 +1,82 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Node.js и npm
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Vite build output
+dist/
+.vite/
+.vscode/
+
+# Local environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Firebase конфигурационные файлы и другие секретные ключи
+firebase-debug.log
+.firebaserc
+
+# TypeScript
+*.tsbuildinfo
+
+# IDE и редакторы
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# eslint, Prettier и husky
+.eslintcache
+.husky/_/
+lint-staged.config.js
+
+# MacOS файлы
+Thumbs.db
+*.log
+.cache/
+.history/
+
+# Coverage и тестовые артефакты
+coverage/
+.vscode/
+.vitest/
+__tests__/__snapshots__
+
+# Логи и другие временные файлы
+*.log
+*.bak
+*.tmp
+

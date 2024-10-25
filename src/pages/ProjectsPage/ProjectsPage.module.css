@@ -1,0 +1,33 @@
+.main {
+  width: 100%;
+}
+
+.imgContainer {
+  margin: 92px 0 52px 0;
+  height: 502px;
+  overflow: hidden;
+}
+
+.img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.subtitle {
+  font-weight: 700;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.subtitle span {
+  color: #cbacf9;
+}
+
+.text {
+  font-size: 1.25rem;
+  font-family: Helvetica, sans-serif;
+  text-align: left;
+  margin-bottom: 52px;
+}

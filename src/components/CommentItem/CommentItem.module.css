@@ -1,0 +1,86 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 37px;
+}
+
+.commentImg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #b4b7c9;
+}
+
+.comment {
+  background-color: #10132e;
+  border: 1px solid #b4b7c9;
+  border-radius: 14px;
+  max-width: 594px;
+  width: 100%;
+  padding: 15px 15px 5px 15px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.name {
+  font-weight: 700;
+}
+
+.date {
+  color: hsl(231, 14%, 63%);
+  font-size: 0.875rem;
+}
+
+.text {
+  text-align: left;
+  padding: 20px 0 10px 0;
+}
+
+.rowIcon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.icon span {
+  color: #9397ad;
+  font-size: 14px;
+}
+
+.subanswers {
+  background-color: #10132e;
+  border: 1px solid #b4b7c9;
+  border-radius: 14px;
+  padding: 5px 10px;
+}
+
+.input {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  color: inherit;
+  outline: none;
+  font-weight: inherit;
+}
